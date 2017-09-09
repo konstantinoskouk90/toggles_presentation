@@ -7,12 +7,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-        </div>
         <p className="App-intro">
+          <Temperature />
           <Fluids />
           <Nutrition />
-          <Temperature />
         </p>
       </div>
     );

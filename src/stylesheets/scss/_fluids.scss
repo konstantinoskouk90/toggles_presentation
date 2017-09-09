@@ -1,3 +1,42 @@
+html {
+  height: 100%;
+}
+
+body{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+.App-intro {
+  @include flexProps($dir: column, $just: center, $align: center);
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+
+#fluids-text-container {
+    width: 307px;
+    height: 45px;
+    @include flexProps($dir: row, $just: space-around, $align: center);
+}
+
+.toggleText {
+    width: 79px;
+    height: 18px;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    text-align: center;
+    color: #00b093;
+    line-height: 18px;
+}
+
 #switch-container {
     position: relative;
     display: inline-block;
