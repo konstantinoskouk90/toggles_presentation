@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
-import Fluids from '../components/Fluids';
-import Nutrition from '../components/Nutrition';
-import Temperature from '../components/Temperature';
+import Toggle from '../components/Toggle';
 
 class App extends Component {
 
   constructor() {
-    
+
     super();
-    
+
     this.state = {
-      fluids: false,
-      nutrition: false,
-      temparature: false
+      activeBtns: 0
     }
   }
 
-  render() {
+  handleCalc = (bool) => {
+
+    let color = this.state.activeBtns;
+
+    if (bool) {
+      color++;
+    } else {
+      color--;
+    }
+    this.setState({
+      activeBtns: color
+    });
+  }
+
+  render = () => {
     return (
       <div className="App">
-        <p className="App-intro">
-          <Temperature />
-          <Fluids />
-          <Nutrition />
-        </p>
+        <div className="App-intro">
+          <Toggle onChange={this.handleCalc} type={["Cold", "Warm"]}/>
+          <Toggle onChange={this.handleCalc} type={["No water", "Water"]}/>
+          <Toggle onChange={this.handleCalc} type={["No food", "Food"]}/>
+        </div>
       </div>
     );
   }
