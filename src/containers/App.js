@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Fluids from '../components/Fluids';
+import Nutrition from '../components/Nutrition';
+import Temperature from '../components/Temperature';
 
 class App extends Component {
   render() {
@@ -7,7 +10,9 @@ class App extends Component {
         <div className="App-header">
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <Fluids />
+          <Nutrition />
+          <Temperature />
         </p>
       </div>
     );
