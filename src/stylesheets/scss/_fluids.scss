@@ -19,7 +19,7 @@ body{
   margin: 0 auto;
 }
 
-#fluids-text-container {
+.text-container {
     width: 307px;
     height: 45px;
     @include flexProps($dir: row, $just: space-around, $align: center);
