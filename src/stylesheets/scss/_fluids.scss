@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 
-body{
+body {
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -12,14 +12,15 @@ body{
   align-items: center; /*centers items on the cross-axis (y by default)*/
 }
 
-.App-intro {
+.toggle-container {
   @include flexProps($dir: column, $just: center, $align: center);
   height: 100%;
   padding: 0;
   margin: 0 auto;
 }
 
-.text-container {
+.text-container, 
+.answer-container {
     width: 307px;
     height: 45px;
     @include flexProps($dir: row, $just: space-around, $align: center);
@@ -78,7 +79,7 @@ body{
 }
 
 .toggle:checked + #slider:before {
-    -webkit-transform: translateX(143px);
-    -ms-transform: translateX(143px);
-    transform: translateX(143px);
+    -webkit-transform: translateX(144px);
+    -ms-transform: translateX(144px);
+    transform: translateX(144px);
 }

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 // PropTypes
 const propTypes = {
-  onChange: PropTypes.func.isRequired,
-  type: PropTypes.array.isRequired
+  handleCalc: PropTypes.func.isRequired,
+  toggleType: PropTypes.array.isRequired
 };
 
-// The Toggle class represents the Toggle level
+// The Toggle class represents the application's toggle buttons
 class Toggle extends Component {
 
   constructor() {
@@ -23,17 +23,15 @@ class Toggle extends Component {
    * onHandleClick() calls the handleCalc() function which belongs to parent 
    * component Play, via accessing props, and updates the state accordingly
    */
-  onHandleClick = () => {
-
+  onHandleClick = (e) => {
+    
     const nextState = !this.state.isActive;
-
-    console.log(nextState);
 
     this.setState({
         isActive: nextState
     });
 
-    this.props.onChange(nextState);
+    this.props.handleCalc(nextState);
   }
 
   // render() updates the DOM
@@ -41,11 +39,11 @@ class Toggle extends Component {
     return (
       <label id="switch-container">
         <div className="text-container">
-          <div className="toggleText">{this.props.type[0]}</div>
-          <div className="toggleText">{this.props.type[1]}</div>
+          <div className="toggleText">{this.props.toggleType[0]}</div>
+          <div className="toggleText">{this.props.toggleType[1]}</div>
         </div>
-        <input type="checkbox" className="toggle"></input>
-        <span id="slider" onClick={this.onHandleClick}></span>
+        <input type="checkbox" className="toggle" onClick={this.onHandleClick}></input>
+        <span id="slider"></span>
       </label>
     );
   }
