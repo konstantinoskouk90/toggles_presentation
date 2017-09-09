@@ -22,11 +22,11 @@ class Temperature extends Component {
   render = () => {
     return (
       <label id="switch-container">
-        <div id="fluids-text-container">
+        <div id="temperature-text-container">
           <div id="cold" className="toggleText">Cold</div>
           <div id="warm" className="toggleText">Warm</div>
         </div>
-        <input type="checkbox" className="toggle table-active"></input>
+        <input type="checkbox" className="toggle active"></input>
         <span id="slider"></span>
       </label>
     );

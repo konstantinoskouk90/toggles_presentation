@@ -4,6 +4,18 @@ import Nutrition from '../components/Nutrition';
 import Temperature from '../components/Temperature';
 
 class App extends Component {
+
+  constructor() {
+    
+    super();
+    
+    this.state = {
+      fluids: false,
+      nutrition: false,
+      temparature: false
+    }
+  }
+
   render() {
     return (
       <div className="App">

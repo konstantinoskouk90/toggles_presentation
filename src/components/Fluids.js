@@ -23,10 +23,10 @@ class Fluids extends Component {
     return (
       <label id="switch-container">
         <div id="fluids-text-container">
-          <div id="cold" className="toggleText">No water</div>
-          <div id="warm" className="toggleText">Water</div>
+          <div id="no-water" className="toggleText">No water</div>
+          <div id="water" className="toggleText">Water</div>
         </div>
-        <input type="checkbox" className="toggle table-active"></input>
+        <input type="checkbox" className="toggle active"></input>
         <span id="slider"></span>
       </label>
     );

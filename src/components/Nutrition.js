@@ -22,11 +22,11 @@ class Nutrition extends Component {
   render = () => {
     return (
       <label id="switch-container">
-        <div id="fluids-text-container">
-          <div id="cold" className="toggleText">No food</div>
-          <div id="warm" className="toggleText">Food</div>
+        <div id="nutrition-text-container">
+          <div id="no-food" className="toggleText">No food</div>
+          <div id="food" className="toggleText">Food</div>
         </div>
-        <input type="checkbox" className="toggle table-active"></input>
+        <input type="checkbox" className="toggle active"></input>
         <span id="slider"></span>
       </label>
     );
