@@ -21,7 +21,7 @@ body {
   padding: 0;
   margin: 0 auto; }
 
-#fluids-text-container {
+.text-container  {
   width: 307px;
   height: 45px;
   display: flex;

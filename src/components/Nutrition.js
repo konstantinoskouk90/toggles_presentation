@@ -22,7 +22,7 @@ class Nutrition extends Component {
   render = () => {
     return (
       <label id="switch-container">
-        <div id="nutrition-text-container">
+        <div className="text-container">
           <div id="no-food" className="toggleText">No food</div>
           <div id="food" className="toggleText">Food</div>
         </div>

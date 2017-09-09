@@ -22,7 +22,7 @@ class Temperature extends Component {
   render = () => {
     return (
       <label id="switch-container">
-        <div id="temperature-text-container">
+        <div className="text-container">
           <div id="cold" className="toggleText">Cold</div>
           <div id="warm" className="toggleText">Warm</div>
         </div>

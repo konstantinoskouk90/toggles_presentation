@@ -22,7 +22,7 @@ class Fluids extends Component {
   render = () => {
     return (
       <label id="switch-container">
-        <div id="fluids-text-container">
+        <div className="text-container">
           <div id="no-water" className="toggleText">No water</div>
           <div id="water" className="toggleText">Water</div>
         </div>
