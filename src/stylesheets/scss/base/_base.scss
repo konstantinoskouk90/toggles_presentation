@@ -1,0 +1,15 @@
+// ================================= 
+//   BASE
+// =================================
+
+html {
+  @include dimensions($h: 100%);
+}
+  
+body {
+  @include flexProps($just: center, $align: center);
+  @include dimensions($w: 100%, $h: 100%);
+  overflow: hidden;
+  position: absolute;
+  background-image: linear-gradient(to bottom, rgba(250, 145, 97, 0.7), rgba(247, 59, 28, 0.69));
+}

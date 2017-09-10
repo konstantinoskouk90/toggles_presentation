@@ -19,7 +19,7 @@ class App extends Component {
    * handleCalc(bool, name) updates the state and changes the 
    * application's background color by calling handleBgColor(color)
    */
-  handleCalc = (bool, name) => {
+  handleCalc = (bool) => {
 
     let color = this.state.activeBtns;
 

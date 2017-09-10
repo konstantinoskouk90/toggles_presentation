@@ -38,8 +38,8 @@ class Toggle extends Component {
   }
 
   /**
-   * handleClick(bool) updates the component's state and then calls handleTextColor() 
-   * which changes the text's color; it then calls the onHandleCalc() function which 
+   * handleClick(bool) updates the component's state and then calls handleTextColor(bool) 
+   * which changes the text's color; it then calls the onHandleCalc(bool) function which 
    * belongs to parent component App, via accessing props, updating the state accordingly
    */
   handleTextColor = (bool) => {
@@ -47,13 +47,16 @@ class Toggle extends Component {
     const incorrect = document.querySelector(`#${this.props.name} .incorrect`);
     const correct = document.querySelector(`#${this.props.name} .correct`);
 
-      if(bool) {
+    switch (bool) {
+      case true:
         incorrect.style.color = "#ffffff";
         correct.style.color = "#20b298";
-      } else {
+        break;
+      default:
         incorrect.style.color = "#20b298";
         correct.style.color = "#ffffff";
-      }
+        break;
+    }
   }
 
   // render() updates the DOM
