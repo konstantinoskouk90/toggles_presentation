@@ -22,7 +22,7 @@ class Toggle extends Component {
 
   /**
    * handleClick(e) updates the component's state and then calls handleTextColor(bool) 
-   * which changes the text's color; it then calls the onHandleCalc() function which 
+   * which changes the text's color; it then calls the onHandleCalc(bool) function which 
    * belongs to parent component App, via accessing props, updating the state accordingly
    */
   handleClick = (e) => {
@@ -38,9 +38,8 @@ class Toggle extends Component {
   }
 
   /**
-   * handleClick(bool) updates the component's state and then calls handleTextColor(bool) 
-   * which changes the text's color; it then calls the onHandleCalc(bool) function which 
-   * belongs to parent component App, via accessing props, updating the state accordingly
+   * handleTextColor(bool) updates the toggle button's text color 
+   * based on if the toggle button is activated or deactivated
    */
   handleTextColor = (bool) => {
 
