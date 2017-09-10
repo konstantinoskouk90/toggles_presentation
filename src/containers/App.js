@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Toggle from '../components/Toggle';
+import toggle_buttons from '../data/toggle_buttons';
+import bg_colors from '../data/bg_colors';
 
+// The App class acts as a container for the entire application
 class App extends Component {
 
   constructor() {
@@ -12,7 +15,11 @@ class App extends Component {
     }
   }
 
-  onHandleCalc = (bool) => {
+  /**
+   * handleCalc(bool, name) updates the state and changes the 
+   * application's background color by calling handleBgColor(color)
+   */
+  handleCalc = (bool, name) => {
 
     let color = this.state.activeBtns;
 
@@ -26,32 +33,43 @@ class App extends Component {
       activeBtns: color
     });
 
-    this.onHandleBgColor(color);
+    this.handleBgColor(color);
   }
 
-  onHandleBgColor = (num) => {
-
-    const colors = [
-      "white",
-      "red",
-      "yellow",
-      "green"
-    ];
-
+  /** 
+   * handleBgColor(num) changes the background color of the HTML's 
+   * body depending on the number of toggle buttons activated
+   */
+  handleBgColor = (num) => {
     const body = document.getElementsByTagName("body")[0];
-    body.style.backgroundColor = colors[num];
+    body.style.backgroundImage = bg_colors[num];
   }
 
+  // render() updates the DOM
   render = () => {
+
+    /**
+     * Loop through toggle buttons array and create 
+     * toggle components with individual properties
+     */
+    const toggles = toggle_buttons.map(toggle => <Toggle
+      name={toggle.name}
+      key={toggle.name}
+      onHandleCalc={this.handleCalc}
+      toggleType={[toggle.incorrect, toggle.correct]}
+    />);
+
     return (
       <div className="app-container">
+        <div className="title-container">
+          <span className="title-text">Ideal conditions for the bacterial growth</span>
+        </div>
         <div className="toggle-container">
-          <Toggle handleCalc={this.onHandleCalc} toggleType={["Cold", "Warm"]} />
-          <Toggle handleCalc={this.onHandleCalc} toggleType={["No water", "Water"]} />
-          <Toggle handleCalc={this.onHandleCalc} toggleType={["No food", "Food"]} />
+          {toggles}
         </div>
         <div className="answer-container">
-          <span className="answer-text">{this.state.activeBtns === 3 ? "Correct" : "Incorrect"}</span>
+          {/* Determine the answer based on the number of activated toggle buttons */}
+          <span className="answer-text">The answer is {this.state.activeBtns === toggle_buttons.length ? "correct!" : "incorrect."}</span>
         </div>
       </div>
     );
